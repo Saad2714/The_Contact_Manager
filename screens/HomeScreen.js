@@ -19,7 +19,7 @@ export default class HomeContactScreen extends React.Component{
     }
 
   componentWillMount(){
-    const{ navigation } = this.props
+    const{ navigation } = this.props;
     navigation.addListener("willFocus", () => {
       this.getAllContact();
     })
@@ -66,7 +66,7 @@ export default class HomeContactScreen extends React.Component{
         contact= JSON.parse(item[1])
           return (
             <TouchableOpacity>
-              <Card style = {style.listItem}>
+              <Card style = {styles.listItem}>
                 <View style={styles.iconContainer}>
                   <Text style = {styles.contactIcon}>
                     {contact.fname[0].toUpperCase()}
@@ -87,7 +87,7 @@ export default class HomeContactScreen extends React.Component{
             </TouchableOpacity>
           )
       } }
-      keyExtractor= { (item, index) + item[0].toString() }
+      keyExtractor= { (item, index) => item[0].toString() }
       />
       
       

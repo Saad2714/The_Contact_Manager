@@ -157,7 +157,6 @@ saveContact = async() =>{
       full
       onPress = { () => {
         this.saveContact();
-        this.forceUpdate()
         
       }}
     >
