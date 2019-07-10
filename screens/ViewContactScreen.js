@@ -1,7 +1,33 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View,ScrollView, TouchableOpacity, Linking, Platform, Alert, AsyncStorage, } from 'react-native';
+import { Card, CardItem} from "native-base"
+import {Entypo} from "@expo/vector-icons"
 
 export default class ViewContactScreen extends React.Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      fname: "Patel",
+      lname:"Patel",
+      phone: "Patel",
+      email: "Patel",
+      address: "Patel", 
+      key: "Patel",
+
+    }
+  }
+  static navigationOptions = {
+    title: "View Contact"
+}
+
+  componentDidMount(){
+    const { navigation } = this.props;
+  navigation.addListener("WillFocus", ()=> {
+    var key = this.props.navigation.getParam("key","")
+    
+  }) 
+
 render(){
   return (
     <View style={styles.container}>

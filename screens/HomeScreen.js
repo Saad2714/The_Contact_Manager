@@ -65,7 +65,13 @@ export default class HomeContactScreen extends React.Component{
       renderItem={ ( { item }) => {
         contact= JSON.parse(item[1])
           return (
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress = {()=> {
+              this.props.navigation.navigate("View", {
+                key:item[0].toString()
+                
+              })
+            }}>
               <Card style = {styles.listItem}>
                 <View style={styles.iconContainer}>
                   <Text style = {styles.contactIcon}>
@@ -82,14 +88,12 @@ export default class HomeContactScreen extends React.Component{
                 </View>
 
               </Card>
-
-
             </TouchableOpacity>
           )
       } }
       keyExtractor= { (item, index) => item[0].toString() }
       />
-      
+            
       
       <TouchableOpacity
       style = {styles.floatButton}
