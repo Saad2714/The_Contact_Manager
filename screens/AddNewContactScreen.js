@@ -47,8 +47,8 @@ saveContact = async() =>{
 
         fname:this.state.fname ,
         lname:this.state.lname ,
-        phone:this.state.email ,
-        email:this.state.phone ,
+        phone:this.state.phone ,
+        email:this.state.email ,
         address:this.state.address 
     
 
