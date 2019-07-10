@@ -26,7 +26,21 @@ export default class ViewContactScreen extends React.Component{
   navigation.addListener("WillFocus", ()=> {
     var key = this.props.navigation.getParam("key","")
     
-  }) 
+  })
+  
+}
+
+getContact =  async key => {  
+  await AsyncStorage.getItem(key)
+  .then(contactjsonstring => {
+    var contact = JSON.parse(contactjsonstring)
+    contact[key] = key
+    this.setState(contact)
+  })
+  .catch(error =>{
+    console.log(error)
+  })
+}
 
 render(){
   return (
