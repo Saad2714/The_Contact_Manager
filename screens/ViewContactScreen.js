@@ -139,6 +139,69 @@ render(){
       </Card>
 
     </View>
+
+    <Card style={styles.actionContainer}>
+      <CardItem style={styles.actionButton} bordered >
+        <TouchableOpacity onPress ={ () => {
+          this.smsAction(this.state.phone)
+        }}>
+          <Entypo
+            name= "message"
+            size ={ 30 }
+            color = "#B83227"/>
+        <Text style= {styles.actionText}> Message</Text>
+
+        </TouchableOpacity>
+
+      </CardItem>
+
+      <CardItem style={styles.actionButton} bordered >
+        <TouchableOpacity onPress ={ () => {
+          this.callAction(this.state.phone)
+        }}>
+          <Entypo
+            name= "phone"
+            size ={ 30 }
+            color = "#B83227"/>
+            <Text style= {styles.actionText}> Call</Text>
+
+        </TouchableOpacity>
+
+      </CardItem>
+    </Card>
+
+
+    <Card style={styles.actionContainer}>
+      <CardItem style={styles.actionButton} bordered >
+        <TouchableOpacity onPress ={ () => {
+          this.editContact(this.state.key)
+
+        }}>
+          <Entypo
+            name= "edit"
+            size ={ 30 }
+            color = "#B83227"/>
+            <Text style= {styles.actionText}> Edit</Text>
+        </TouchableOpacity>
+
+      </CardItem>
+
+      <CardItem style={styles.actionButton} bordered >
+        <TouchableOpacity onPress ={ () => {
+          this.deleteContact(this.state.key)
+
+        }}>
+          <Entypo
+            name= "trash"
+            size ={ 30 }
+            color = "#B83227"/>
+            <Text style= {styles.actionText}> Delete</Text>
+
+        </TouchableOpacity>
+
+      </CardItem>
+    </Card>
+
     </ScrollView>
   );
 }
