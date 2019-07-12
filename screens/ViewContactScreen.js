@@ -92,6 +92,37 @@ export default class ViewContactScreen extends React.Component{
     this.props.navigation.navigate("Edit", {key:key})
   }
 
+  deleteContact = (key) => {
+    Alert.alert(
+      "Delete Contact",
+      `${this.state.fname} ${this.state.lname}` ,
+      [
+        {
+          text: "Cancel" , onPress : ()=> {console.log("Cancel tapped")}
+        },
+        {
+          text: "Confirm", onPress :  async() => {
+            await AsyncStorage.removeItem(key)
+            .then(
+              () => {
+                this.props.navigation.goBack()
+              }
+            )
+
+            .catch(error => console.log(error))
+          }
+          }
+        
+
+      ]
+      
+      
+      
+      
+      )
+  }
+
+
 render(){
   return (
     <ScrollView style={styles.container}>
